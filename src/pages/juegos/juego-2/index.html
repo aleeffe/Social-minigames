@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guess the social media platform from a notification clue">
+  <title>Social notification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="game-card" aria-labelledby="game-title">
+      <header class="notification-header">
+        <img class="header-logo" src="../../../assets/images/juegos/juego-2/x_logo.png" alt="">
+        <div>
+          <strong>Social notification</strong>
+          <span>Just now · Choose your answer</span>
+        </div>
+        <span class="more-button" aria-hidden="true">•••</span>
+      </header>
+
+      <section id="setup-panel" class="setup-panel" aria-labelledby="game-title">
+        <p class="eyebrow">A social media challenge</p>
+        <h1 id="game-title">Which platform is this?</h1>
+        <p class="intro">Choose a mode, then identify each platform from its notification clue.</p>
+        <div id="player-name-field" class="player-name-field">
+          <label for="player-name">Your name</label>
+          <input id="player-name" type="text" maxlength="24" autocomplete="name"
+            placeholder="Enter your name">
+        </div>
+        <div class="difficulty-options" role="group" aria-label="Choose a game mode">
+          <button class="difficulty-option" type="button" data-mode="easy">
+            <strong>Easy</strong><span>Emojis</span>
+          </button>
+          <button class="difficulty-option" type="button" data-mode="medium">
+            <strong>Medium</strong><span>Core ideas</span>
+          </button>
+          <button class="difficulty-option" type="button" data-mode="hard">
+            <strong>Hard</strong><span>Curiosities</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="game-panel" class="game-panel" hidden aria-live="polite">
+        <div class="game-topbar">
+          <div>
+            <p class="eyebrow">Mode: <span id="mode-display"></span></p>
+            <p id="progress-display">Question 1 of 15</p>
+          </div>
+          <div class="lives" aria-label="Lives remaining">
+            <span>Lives</span>
+            <strong id="lives-display">♥ ♥ ♥ ♥</strong>
+          </div>
+          <button id="restart-button" class="secondary-button" type="button">Restart</button>
+        </div>
+
+        <article class="notification">
+          <div class="notification-author">
+            <img id="clue-logo" src="../../../assets/images/juegos/juego-2/default.jpg" alt="Default notification image">
+            <div><strong>New notification</strong><span>Can you recognize this platform?</span></div>
+          </div>
+          <div id="clue" class="clue"></div>
+        </article>
+
+        <p id="feedback" class="feedback" role="status"></p>
+        <div id="answer-options" class="answer-options" role="group" aria-label="Social media options"></div>
+      </section>
+
+      <section id="results-panel" class="results-panel" hidden>
+        <p class="result-icon" aria-hidden="true">★</p>
+        <p class="eyebrow">Challenge complete</p>
+        <h2 id="results-title">Well played!</h2>
+        <p id="results-summary"></p>
+        <button id="continue-button" class="primary-button" type="button">Continue</button>
+      </section>
+    </section>
+  </main>
+  <script src="../player-session.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

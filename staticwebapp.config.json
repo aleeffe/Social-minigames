@@ -1,0 +1,11 @@
+{
+  "navigationFallback": {
+    "rewrite": "/src/pages/inicio/index.html",
+    "exclude": [
+      "*.{css,js,png,jpg,jpeg,gif,svg,webp,ico}"
+    ]
+  },
+  "mimeTypes": {
+    ".json": "application/json"
+  }
+}

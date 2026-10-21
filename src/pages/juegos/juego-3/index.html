@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guess social media words">
+  <title>Hangman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="game-card" aria-labelledby="game-title">
+      <header class="notification-header">
+        <span class="facebook-mark" aria-hidden="true">f</span>
+        <div>
+          <strong>Facebook</strong>
+          <span>Just now</span>
+        </div>
+        <button class="more-button" type="button" aria-label="More options">•••</button>
+      </header>
+
+      <section id="setup-panel" class="setup-panel" aria-labelledby="setup-title">
+        <h2 id="setup-title">Choose your challenge</h2>
+        <div id="player-name-field" class="player-name-field">
+          <label for="player-name">Your name</label>
+          <input id="player-name" type="text" maxlength="24" autocomplete="name"
+            placeholder="Enter your name">
+        </div>
+        <div class="difficulty-options" role="group" aria-label="Number of words">
+          <button class="difficulty-option" type="button" data-word-count="5">
+            <strong>Easy</strong><span>5 words</span>
+          </button>
+          <button class="difficulty-option" type="button" data-word-count="10">
+            <strong>Medium</strong><span>10 words</span>
+          </button>
+          <button class="difficulty-option" type="button" data-word-count="20">
+            <strong>Hard</strong><span>20 words</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="game-panel" class="game-panel" hidden aria-live="polite">
+        <div class="game-topbar">
+          <div>
+            <p class="eyebrow">Progress</p>
+            <p id="progress-display">Word 1 of 5</p>
+          </div>
+          <button id="restart-button" class="secondary-button" type="button">Restart</button>
+        </div>
+
+        <div class="game-layout">
+          <div class="hangman-area">
+            <img id="hangman-image" src="../../../assets/images/juegos/juego-3/1.jpg"
+              alt="Hangman drawing, mistake 0 of 6">
+            <p id="mistakes-display">Mistakes: 0 / 6</p>
+          </div>
+
+          <div class="word-area">
+            <p class="eyebrow">Clue</p>
+            <p id="description" class="description">
+              <strong id="description-text"></strong>
+              <span id="type-text"></span>
+            </p>
+            <p id="word-display" class="word-display" aria-label="Word to guess"></p>
+            <p id="feedback" class="feedback" role="status"></p>
+
+            <form id="guess-form" class="guess-form">
+              <label for="letter-input">Enter one letter</label>
+              <div class="guess-controls">
+                <input id="letter-input" name="letter" type="text" maxlength="1"
+                  pattern="[A-Za-z]" autocomplete="off" required>
+                <button class="primary-button" type="submit">Guess</button>
+              </div>
+            </form>
+            <div class="used-letters">
+              <span>Used letters:</span>
+              <strong id="used-letters">None</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <dialog id="results-dialog" class="results-dialog">
+        <p class="eyebrow">Game finished</p>
+        <h2 id="results-title">Results</h2>
+        <p id="results-summary"></p>
+        <p id="results-errors"></p>
+        <button id="continue-button" class="primary-button" type="button">Continue</button>
+      </dialog>
+    </section>
+  </main>
+  <script src="../player-session.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

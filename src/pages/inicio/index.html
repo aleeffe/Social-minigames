@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose a game</title>
+  <link rel="stylesheet" href="../../css/inicio.css">
+</head>
+<body>
+  <main class="home">
+    <h1>Choose a game to try your social media knowledge!</h1>
+
+    <nav class="game-list" aria-label="Games">
+      <a class="game-button game-button--one" data-game="juego-1" href="../juegos/juego-1/index.html">
+        <span>Letter soup</span>
+      </a>
+      <a class="game-button game-button--two" data-game="juego-2" href="../juegos/juego-2/index.html">
+        <span>Quiz</span>
+      </a>
+      <a class="game-button game-button--three" data-game="juego-3" href="../juegos/juego-3/index.html">
+        <span>Hangman</span>
+      </a>
+    </nav>
+
+    <a id="results-link" class="results-link" href="../juegos/resultados/index.html" hidden>
+      View your results
+    </a>
+  </main>
+  <dialog id="completed-game-dialog" class="completed-game-dialog">
+    <p>Finish the other games to continue, or restart your progress.</p>
+    <div class="dialog-actions">
+      <button id="restart-progress-button" class="restart-button" type="button">
+        Restart progress
+      </button>
+      <button id="continue-button" class="continue-button" type="button">
+        Continue
+      </button>
+    </div>
+  </dialog>
+  <script src="../juegos/player-session.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

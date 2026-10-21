@@ -1,0 +1,370 @@
+:root {
+  color: #1c1e21;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #e4e6eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(rgb(24 119 242 / 22%), rgb(24 119 242 / 42%)),
+    url("../../../assets/images/juegos/juego-3/5145730.jpg") center / cover fixed;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.game-shell {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.game-card {
+  width: min(100%, 900px);
+  padding: 0 clamp(1rem, 4vw, 2rem) clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid #d3d6db;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 22%);
+}
+
+.notification-header {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 calc(clamp(1rem, 4vw, 2rem) * -1) 1.5rem;
+  padding: 0.9rem clamp(1rem, 4vw, 2rem);
+  border-bottom: 1px solid #e4e6eb;
+}
+
+.facebook-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: end center;
+  border-radius: 50%;
+  color: #fff;
+  background: #1877f2;
+  font-family: Arial, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.notification-header div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.notification-header strong {
+  color: #1c1e21;
+  font-size: 0.95rem;
+}
+
+.notification-header div span {
+  color: #65676b;
+  font-size: 0.78rem;
+}
+
+.more-button {
+  margin-left: auto;
+  padding: 0.4rem;
+  border: 0;
+  color: #65676b;
+  background: transparent;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+h2,
+p {
+  margin-top: 0;
+}
+
+.eyebrow {
+  margin-bottom: 0.4rem;
+  color: #65676b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.setup-panel {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.setup-panel h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.player-name-field {
+  max-width: 420px;
+  margin: 0 auto 1.25rem;
+  text-align: left;
+}
+
+.player-name-field label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #4b4f56;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.player-name-field input {
+  width: 100%;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid #ccd0d5;
+  border-radius: 0.6rem;
+  font: inherit;
+}
+
+.difficulty-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+
+.difficulty-option,
+.secondary-button {
+  border: 1px solid #ccd0d5;
+  border-radius: 0.75rem;
+  color: #1c1e21;
+  background: #f0f2f5;
+}
+
+.difficulty-option {
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem;
+  transition: transform 150ms ease, background 150ms ease;
+}
+
+.difficulty-option span {
+  color: #65676b;
+  font-size: 0.9rem;
+}
+
+.difficulty-option:hover,
+.difficulty-option:focus-visible {
+  background: #e7f3ff;
+  outline: 2px solid #1877f2;
+  outline-offset: 2px;
+  transform: translateY(-2px);
+}
+
+.game-topbar,
+.game-layout {
+  display: flex;
+  gap: 1rem;
+}
+
+.game-topbar {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.game-topbar p {
+  margin-bottom: 0;
+}
+
+.secondary-button,
+.primary-button {
+  min-height: 44px;
+  padding: 0.7rem 1.2rem;
+  border: 0;
+  border-radius: 0.65rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.secondary-button {
+  border: 1px solid #ccd0d5;
+  color: #1c1e21;
+  background: transparent;
+}
+
+.primary-button {
+  background: #1877f2;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.primary-button:focus-visible,
+.secondary-button:focus-visible {
+  filter: brightness(1.15);
+  outline: 2px solid #1877f2;
+  outline-offset: 2px;
+}
+
+.game-layout {
+  align-items: center;
+}
+
+.hangman-area {
+  flex: 0 1 43%;
+  text-align: center;
+}
+
+.hangman-area img {
+  display: block;
+  width: min(100%, 300px);
+  margin: 0 auto 0.75rem;
+  border-radius: 0.75rem;
+}
+
+.hangman-area p {
+  margin-bottom: 0;
+  color: #65676b;
+  font-weight: 700;
+}
+
+.word-area {
+  flex: 1;
+}
+
+.description {
+  min-height: 3.2rem;
+  margin-bottom: 1.3rem;
+  color: #4b4f56;
+  line-height: 1.5;
+}
+
+.description strong,
+.description span {
+  display: block;
+}
+
+.word-display {
+  min-height: 2.2rem;
+  margin-bottom: 1rem;
+  color: #1c1e21;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  word-break: break-word;
+}
+
+.guess-form label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #4b4f56;
+  font-size: 0.9rem;
+}
+
+.guess-controls {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.guess-controls input {
+  width: 4rem;
+  border: 1px solid #ccd0d5;
+  border-radius: 0.6rem;
+  color: #1c1e21;
+  background: #f0f2f5;
+  font-size: 1.3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.guess-controls input:focus {
+  border-color: #1877f2;
+  outline: 3px solid rgb(24 119 242 / 20%);
+}
+
+.feedback {
+  min-height: 1.3rem;
+  margin-bottom: 0.7rem;
+  color: #b34a00;
+}
+
+.used-letters {
+  margin-top: 1.25rem;
+  color: #65676b;
+  font-size: 0.9rem;
+}
+
+.used-letters strong {
+  color: #1c1e21;
+  letter-spacing: 0.12em;
+}
+
+.results-dialog {
+  width: min(90%, 420px);
+  padding: 2rem;
+  border: 1px solid #ccd0d5;
+  border-radius: 1rem;
+  color: #1c1e21;
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 60%);
+  text-align: center;
+}
+
+.results-dialog::backdrop {
+  background: rgb(28 30 33 / 60%);
+}
+
+.results-dialog h2 {
+  margin-bottom: 0.75rem;
+}
+
+.results-dialog p:not(.eyebrow) {
+  color: #65676b;
+}
+
+@media (max-width: 650px) {
+  .game-shell {
+    padding: 0.65rem;
+  }
+
+  .game-card {
+    padding: 0.9rem;
+    border-radius: 1rem;
+  }
+
+  .difficulty-options,
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .game-layout {
+    flex-direction: column;
+  }
+
+  .hangman-area {
+    width: 100%;
+  }
+
+  .word-area {
+    width: 100%;
+  }
+}

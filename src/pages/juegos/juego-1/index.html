@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Letter soup game">
+  <title>Letter Soup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section class="game-card" aria-labelledby="game-title">
+      <header class="game-header">
+        <p class="brand" aria-label="Instagram">instagram</p>
+        <h1 id="game-title">Create a username</h1>
+      </header>
+
+      <section id="setup-panel" class="setup-panel" aria-labelledby="setup-title">
+        <h2 id="setup-title">Set up your game</h2>
+        <form id="setup-form">
+          <div id="player-name-field">
+            <label for="player-name">Your name</label>
+            <input id="player-name" name="playerName" type="text" maxlength="24"
+              autocomplete="name" placeholder="Enter your name" required>
+          </div>
+
+          <fieldset>
+            <legend>Choose a difficulty</legend>
+            <div class="difficulty-options">
+              <label class="difficulty-option">
+                <input type="radio" name="difficulty" value="easy" checked>
+                <span><strong>Easy</strong><small>5 words · 9 × 9</small></span>
+              </label>
+              <label class="difficulty-option">
+                <input type="radio" name="difficulty" value="medium">
+                <span><strong>Medium</strong><small>7 words · 11 × 11</small></span>
+              </label>
+              <label class="difficulty-option">
+                <input type="radio" name="difficulty" value="hard">
+                <span><strong>Hard</strong><small>10 words · 15 × 15</small></span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="primary-button" type="submit">Start game</button>
+        </form>
+      </section>
+
+      <section id="game-panel" class="game-panel" hidden aria-live="polite">
+        <div class="game-info">
+          <div>
+            <p class="eyebrow">Player</p>
+            <p id="player-display" class="player-display"></p>
+          </div>
+          <div class="progress-box">
+            <span id="progress-display">0 / 5 found</span>
+            <div class="progress-track"><span id="progress-bar"></span></div>
+          </div>
+        </div>
+
+        <div class="board-wrap">
+          <div id="letter-grid" class="letter-grid" role="grid" aria-label="Letter soup"></div>
+        </div>
+
+        <div class="word-list-area">
+          <h2>Words to find</h2>
+          <ul id="word-list" class="word-list"></ul>
+        </div>
+      </section>
+
+      <section id="success-panel" class="success-panel" hidden>
+        <p class="success-icon" aria-hidden="true">★</p>
+        <h2>You win!</h2>
+        <p>Great job, <span id="winner-name"></span>.</p>
+        <button id="continue-button" class="primary-button" type="button">Continue</button>
+      </section>
+    </section>
+  </main>
+  <script src="../player-session.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
